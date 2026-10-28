@@ -1,0 +1,38 @@
+const paths: Record<string, string> = {
+  leaf: '<path d="M5 17C2 6 11 3 21 3c0 11-4 17-13 16M4 21 16 9"/>',
+  care: '<path d="M7 13V7a2 2 0 0 1 4 0v5-8a2 2 0 0 1 4 0v8-5a2 2 0 0 1 4 0v9c0 4-3 6-6 6-4 0-6-3-9-6-2-2 0-4 2-2l1 1"/>',
+  hoe: '<path d="m5 21 12-16M11 4l9 6M13 3l9 6-3 4-9-6z"/>',
+  seed: '<path d="M12 21v-9M12 13C4 13 3 9 3 5c6 0 9 2 9 8ZM12 9c0-6 3-7 8-7 0 5-2 8-8 7Z"/><path d="M7 22h10"/>',
+  water: '<path d="M7 9h10v10H7zM17 11h3a2 2 0 0 1 0 4h-3M7 11 3 8l-2 3 6 6M9 9V5a4 4 0 0 1 8 0v4"/>',
+  harvest: '<path d="M4 10h16l-2 11H6zM7 10l5-8 5 8M9 14v3m6-3v3"/>',
+  lift: '<path d="M12 2v12M7 3h10M7 13h10v4c0 2-5 5-5 5s-5-3-5-5z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/>',
+  rain: '<path d="M6 14a5 5 0 1 1 1-10 6 6 0 0 1 11 3 4 4 0 1 1 0 8H6M7 18l-1 3m6-3-1 3m6-3-1 3"/>',
+  cloud: '<path d="M6 18a5 5 0 1 1 1-10 6 6 0 0 1 11 0 5 5 0 0 1 0 10Z"/>',
+  moon: '<path d="M21 14A9 9 0 0 1 10 3a9 9 0 1 0 11 11Z"/>',
+  coin: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 9v6"/>',
+  bag: '<path d="M7 7V5a5 5 0 0 1 10 0v2M5 7h14l2 15H3zM9 12h6"/>',
+  book: '<path d="M12 5C8 2 4 3 2 4v16c3-2 7-2 10 0 3-2 7-2 10 0V4c-3-1-7-2-10 1ZM12 5v15"/>',
+  home: '<path d="m2 11 10-8 10 8M5 9v12h14V9M10 21v-7h4v7"/>',
+  market: '<path d="m3 3-2 7h22l-2-7ZM3 10v11h18V10M9 21v-7h6v7M7 3l-1 7m11-7 1 7"/>',
+  shipping: '<path d="M3 7h18v14H3zM2 3h20v4H2zM9 12h6"/>',
+  well: '<path d="M4 11h16v10H4zM5 11V4m14 7V4M3 4h18M12 4v10M8 14h8v4H8z"/>',
+  commons: '<path d="M3 12h18v4H3zM5 16v5m14-5v5M5 12V5h14v7M5 8h14"/>',
+  settings: '<path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="16" cy="17" r="3"/>',
+  close: '<path d="m6 6 12 12M6 18 18 6"/>',
+  check: '<path d="m5 12 5 5L20 6"/>',
+  arrow: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
+  sound: '<path d="M11 4 6 8H2v8h4l5 4ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>',
+  mute: '<path d="M11 4 6 8H2v8h4l5 4ZM16 9l6 6m-6 0 6-6"/>',
+  save: '<path d="M4 3h13l4 4v14H3V3zM7 3v6h9V3M7 21v-8h10v8"/>',
+  download: '<path d="M12 2v13m-5-5 5 5 5-5M3 16v5h18v-5"/>',
+  chevron: '<path d="m6 9 6 6 6-6"/>',
+  dewturnip: '<path d="M12 9c-9-3-12 7 0 13 12-6 9-16 0-13ZM12 9C5 7 6 3 6 3c4 0 6 2 6 6Zm0 0c0-6 5-7 7-7 0 5-3 7-7 7Z"/>',
+  puffradish: '<path d="M12 8c-10-2-11 12 0 13 11-1 10-15 0-13ZM12 8V2m0 5L6 3m6 4 6-4M12 21v2"/>',
+  ribbonbean: '<path d="M17 3C9 0 2 9 5 17s10 5 12 0c2-5 7-8 0-14ZM10 7l2 1m-3 4 2 1m-2 4 2 1"/>',
+  pearloat: '<path d="M12 22V3M12 8C5 8 5 3 5 3c5 0 7 3 7 5Zm0 0c7 0 7-5 7-5-5 0-7 3-7 5ZM12 15c-7 0-7-5-7-5 5 0 7 3 7 5Zm0 0c7 0 7-5 7-5-5 0-7 3-7 5Z"/>',
+};
+
+export function icon(name: string, className = '') {
+  return `<svg class="icon ${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] ?? paths.leaf}</svg>`;
+}
